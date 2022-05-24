@@ -8,11 +8,11 @@ steps:
 - script: |
     echo 'hello allegro'
     echo ':)'
-  displayName: 'say hello'
+  displayName: 'say hello to your future employer'
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'run'
+    command: 'build'
     projects: 'Wiktor.Kisielewski.Service1'
     testRunTitle: 'Running Service 1'
 
@@ -21,3 +21,27 @@ steps:
     command: 'test'
     projects: 'Wiktor.Kisielewski.Service1.Tests'
     testRunTitle: 'Testing Service 1'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'Wiktor.Kisielewski.Service2'
+    testRunTitle: 'Running Service 2'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'Wiktor.Kisielewski.Service2.Tests'
+    testRunTitle: 'Testing Service 2'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'Wiktor.Kisielewski.Service3'
+    testRunTitle: 'Running Service 3'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'Wiktor.Kisielewski.Service3.Tests'
+    testRunTitle: 'Testing Service 3'
