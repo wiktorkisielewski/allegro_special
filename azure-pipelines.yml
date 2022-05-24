@@ -1,0 +1,11 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-20.04
+
+steps:
+- script: |
+    echo 'hello allegro'
+    echo ':)'
+  displayName: 'say hello'
