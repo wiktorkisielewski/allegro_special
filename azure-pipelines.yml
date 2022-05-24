@@ -9,3 +9,15 @@ steps:
     echo 'hello allegro'
     echo ':)'
   displayName: 'say hello'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'run'
+    projects: 'Wiktor.Kisielewski.Service1'
+    testRunTitle: 'Running Service 1'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'Wiktor.Kisielewski.Service1.Tests'
+    testRunTitle: 'Testing Service 1'
