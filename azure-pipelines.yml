@@ -64,30 +64,33 @@ stages:
 - stage: DockerImages
   displayName: Build docker images
   jobs:
-  - job: BuildService1
-    displayName: Build docker image for Service1
+  - job: 'DockerizeService1'
+    displayName: 'Build and push docker image for Service1'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: 'Build and push Service1'
       inputs:
-        repository: Service1
-        command: build
-        Dockerfile: Wiktor.Kisielewski.Service1/Dockerfile
-  - job: BuildService2
-    displayName: Build docker image for Service2
+        containerRegistry: 'docker_hub'
+        repository: 'allegro_special'        
+        command: 'buildAndPush'
+        Dockerfile: 'Wiktor.Kisielewski.Service1/Dockerfile'
+  - job: 'DockerizeService2'
+    displayName: 'Build and push docker image for Service2'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: 'Build and push Service2'
       inputs:
-        repository: Service2
-        command: build
-        Dockerfile: Wiktor.Kisielewski.Service2/Dockerfile
-  - job: BuildService3
-    displayName: Build docker image for Service3
+        containerRegistry: 'docker_hub'
+        repository: 'allegro_special'        
+        command: 'buildAndPush'
+        Dockerfile: 'Wiktor.Kisielewski.Service2/Dockerfile'
+  - job: 'DockerizeService3'
+    displayName: 'Build and push docker image for Service3'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: 'Build and push Service3'
       inputs:
-        repository: Service3
-        command: build
-        Dockerfile: Wiktor.Kisielewski.Service3/Dockerfile
+        containerRegistry: 'docker_hub'
+        repository: 'allegro_special'        
+        command: 'buildAndPush'
+        Dockerfile: 'Wiktor.Kisielewski.Service3/Dockerfile'
