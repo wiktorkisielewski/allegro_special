@@ -71,7 +71,7 @@ stages:
       displayName: 'Build and push Service1'
       inputs:
         containerRegistry: 'docker_hub'
-        repository: 'allegro_special'        
+        repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service1/Dockerfile'
   - job: 'DockerizeService2'
@@ -81,7 +81,7 @@ stages:
       displayName: 'Build and push Service2'
       inputs:
         containerRegistry: 'docker_hub'
-        repository: 'allegro_special'        
+        repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service2/Dockerfile'
   - job: 'DockerizeService3'
@@ -91,6 +91,6 @@ stages:
       displayName: 'Build and push Service3'
       inputs:
         containerRegistry: 'docker_hub'
-        repository: 'allegro_special'        
+        repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service3/Dockerfile'
