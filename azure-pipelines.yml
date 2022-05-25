@@ -60,3 +60,34 @@ stages:
         command: 'test'
         projects: 'Wiktor.Kisielewski.Service3.Tests'
         testRunTitle: 'Testing Service 3'
+
+- stage: DockerImages
+  displayName: Build docker images
+  jobs:
+  - job: BuildService1
+    displayName: Build docker image for Service1
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        repository: Service1
+        command: build
+        Dockerfile: Wiktor.Kisielewski.Service1/Dockerfile
+  - job: BuildService2
+    displayName: Build docker image for Service2
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        repository: Service2
+        command: build
+        Dockerfile: Wiktor.Kisielewski.Service2/Dockerfile
+  - job: BuildService3
+    displayName: Build docker image for Service3
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        repository: Service3
+        command: build
+        Dockerfile: Wiktor.Kisielewski.Service3/Dockerfile
