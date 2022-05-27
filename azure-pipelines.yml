@@ -4,9 +4,6 @@ trigger:
 pool:
   vmImage: ubuntu-20.04
 
-variables:
-  timestamp: $(Get-Date -Format yyyyMMddhhmmss)
-
 stages:
 - stage: Hello
   displayName: Hello there
@@ -77,7 +74,9 @@ stages:
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service1/Dockerfile'
-        tags: Service1-$(timestamp)
+        tags: |
+          Service1
+          $(Build.BuildId)
   - job: 'DockerizeService2'
     displayName: 'Build and push docker image for Service2'
     steps:
@@ -88,7 +87,9 @@ stages:
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service2/Dockerfile'
-        tags: Service2-$(timestamp)
+        tags: |
+          Service2
+          $(Build.BuildId)
   - job: 'DockerizeService3'
     displayName: 'Build and push docker image for Service3'
     steps:
@@ -99,4 +100,6 @@ stages:
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service3/Dockerfile'
-        tags: Service3-$(timestamp)
+        tags: |
+          Service3
+          $(Build.BuildId)
