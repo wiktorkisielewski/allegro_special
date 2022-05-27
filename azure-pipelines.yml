@@ -74,9 +74,7 @@ stages:
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service1/Dockerfile'
-        tags: |
-          Service1
-          $(Build.BuildId)
+        tags: Service1_$(Build.BuildId)
   - job: 'DockerizeService2'
     displayName: 'Build and push docker image for Service2'
     steps:
@@ -87,9 +85,7 @@ stages:
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service2/Dockerfile'
-        tags: |
-          Service2
-          $(Build.BuildId)
+        tags: Service2_$(Build.BuildId)
   - job: 'DockerizeService3'
     displayName: 'Build and push docker image for Service3'
     steps:
@@ -100,6 +96,4 @@ stages:
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
         Dockerfile: 'Wiktor.Kisielewski.Service3/Dockerfile'
-        tags: |
-          Service3
-          $(Build.BuildId)
+        tags: Service3_$(Build.BuildId)
