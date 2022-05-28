@@ -24,12 +24,12 @@ stages:
     - task: DotNetCoreCLI@2
       inputs:
         command: 'build'
-        projects: 'Wiktor.Kisielewski.Service1'
+        projects: 'Service1/Wiktor.Kisielewski.Service1'
         testRunTitle: 'Running Service 1'
     - task: DotNetCoreCLI@2
       inputs:
         command: 'test'
-        projects: 'Wiktor.Kisielewski.Service1.Tests'
+        projects: 'Service1/Wiktor.Kisielewski.Service1.Tests'
         testRunTitle: 'Testing Service 1'
 
   - job: Service2
@@ -38,12 +38,12 @@ stages:
     - task: DotNetCoreCLI@2
       inputs:
         command: 'build'
-        projects: 'Wiktor.Kisielewski.Service2'
+        projects: 'Service2/Wiktor.Kisielewski.Service2'
         testRunTitle: 'Running Service 2'
     - task: DotNetCoreCLI@2
       inputs:
         command: 'test'
-        projects: 'Wiktor.Kisielewski.Service2.Tests'
+        projects: 'Service2/Wiktor.Kisielewski.Service2.Tests'
         testRunTitle: 'Testing Service 2'
 
   - job: Service3
@@ -52,12 +52,12 @@ stages:
     - task: DotNetCoreCLI@2
       inputs:
         command: 'build'
-        projects: 'Wiktor.Kisielewski.Service3'
+        projects: 'Service3/Wiktor.Kisielewski.Service3'
         testRunTitle: 'Running Service 3'
     - task: DotNetCoreCLI@2
       inputs:
         command: 'test'
-        projects: 'Wiktor.Kisielewski.Service3.Tests'
+        projects: 'Service3/Wiktor.Kisielewski.Service3.Tests'
         testRunTitle: 'Testing Service 3'
 
 - stage: DockerImages
@@ -72,7 +72,7 @@ stages:
         containerRegistry: 'docker_hub'
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
-        Dockerfile: 'Wiktor.Kisielewski.Service1/Dockerfile'
+        Dockerfile: 'Service1/Wiktor.Kisielewski.Service1/Dockerfile'
         tags: Service1_$(Build.BuildId)
   - job: 'DockerizeService2'
     displayName: 'Build and push docker image for Service2'
@@ -83,7 +83,7 @@ stages:
         containerRegistry: 'docker_hub'
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
-        Dockerfile: 'Wiktor.Kisielewski.Service2/Dockerfile'
+        Dockerfile: 'Service2/Wiktor.Kisielewski.Service2/Dockerfile'
         tags: Service2_$(Build.BuildId)
   - job: 'DockerizeService3'
     displayName: 'Build and push docker image for Service3'
@@ -94,5 +94,5 @@ stages:
         containerRegistry: 'docker_hub'
         repository: 'wiktorkisielewski/allegro_special'        
         command: 'buildAndPush'
-        Dockerfile: 'Wiktor.Kisielewski.Service3/Dockerfile'
+        Dockerfile: 'Service3/Wiktor.Kisielewski.Service3/Dockerfile'
         tags: Service3_$(Build.BuildId)
