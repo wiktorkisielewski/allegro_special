@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/WiktorKisielewskiAllegro/WiktorKisielewskiAllegro/_apis/build/status/allegro_special?branchName=refs%2Fpull%2F2%2Fmerge)](https://dev.azure.com/WiktorKisielewskiAllegro/WiktorKisielewskiAllegro/_build/latest?definitionId=3&branchName=refs%2Fpull%2F2%2Fmerge)
+
 # CI pipeline for .NET WebAPI services
 
 This repository contains:
