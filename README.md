@@ -1,1 +1,1 @@
-[![Build Status](https://dev.azure.com/WiktorKisielewskiAllegro/WiktorKisielewskiAllegro/_apis/build/status/wiktorkisielewski.allegro_special?branchName=master)](https://dev.azure.com/WiktorKisielewskiAllegro/WiktorKisielewskiAllegro/_build/latest?definitionId=1&branchName=master)
+# CI pipeline for .NET WebAPI services
