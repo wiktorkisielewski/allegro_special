@@ -37,30 +37,33 @@ They serve a basic functionality - returning Weather Forcast
 
 This repository is integrated with a Continuous Integration pipeline hosted on [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)
 
-> [`CI/azure-pipelines.yml`](CI/azure-pipelines.yml)
+[`CI/azure-pipelines.yml`](CI/azure-pipelines.yml)
 
 ### Pipeline steps
 
-PR (pull request) to the `master` branch is created
+> PR (pull request) to the `master` branch is created
+>
+> or
+> 
+> anything is merged/commited directly to to master
 
 &#8595;
 
-The pipeline is **automatically** triggered by the above action
+> The pipeline is **automatically** triggered by the above action
 
 &#8595;
 
-The WebAPI service is run and tested by the XUnit test
-
+> The WebAPI service is run and tested by the XUnit test.
 [This is repeated 3 times - one execution for every service]
 
 &#8595;
 
-Every service is containerized (as a docker image) with a `Dockerfile` (example file for [Service1](Service1/Wiktor.Kisielewski.Service1/Dockerfile))
+> Every service is containerized (as a docker image) with a `Dockerfile` (example file for [Service1](Service1/Wiktor.Kisielewski.Service1/Dockerfile))
 
 &#8595;
 
-Docker images are tagged and pushed to docker registry -[hub.docker.com](https://hub.docker.com/repository/docker/wiktorkisielewski/allegro_special/general)
+> Docker images are tagged and pushed to docker registry -[hub.docker.com](https://hub.docker.com/repository/docker/wiktorkisielewski/allegro_special/general)
 
 &#8595;
 
-The PR is ready to be merged
+>The PR is ready to be merged
